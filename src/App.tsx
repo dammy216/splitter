@@ -10,6 +10,8 @@ import "./App.css";
 import { FlexGrid, FlexGridColumn } from '@mescius/wijmo.react.grid';
 import '@mescius/wijmo.styles/wijmo.css';
 import * as wjcGrid from '@mescius/wijmo.grid';
+import { TabPanel, Tab } from '@mescius/wijmo.react.nav';
+import { useEffect } from "react";
 
 function App() {
 
@@ -22,44 +24,53 @@ function App() {
     { companyId: 6, companyName: "Company F", companyAbility: 80, engineerAbility: 85 },
   ];
 
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, []);
+
 
   return (
-    <div className="App">
-      <ReflexContainer orientation="vertical">
-        <ReflexElement>
-          <ReflexContainer orientation="horizontal">
-
-            <ReflexElement minSize={75}>
-              <h2>入札結果</h2>
-              <FlexGrid itemsSource={bidResultDisplayData} headersVisibility={wjcGrid.HeadersVisibility.All}>
-                <FlexGridColumn header="企業の能力等" binding="companyAbility" isRequired={false} />
-                <FlexGridColumn header="技術者の能力等" binding="engineerAbility" isRequired={false} />
-              </FlexGrid>
+    <TabPanel className="panel" >
+      <Tab  >
+        <a>aaaaa</a>
+        <div>
+          aadadaw
+        </div>
+      </Tab>
+      <Tab >
+        <a>aaaafafaw</a>
+        <div className="App">
+          <ReflexContainer orientation="vertical">
+            <ReflexElement>
+              <ReflexContainer orientation="horizontal">
+                <ReflexElement minSize={75}>
+                  <h2>入札結果</h2>
+                  <FlexGrid itemsSource={bidResultDisplayData}>
+                    <FlexGridColumn header="企業の能力等" binding="companyAbility" />
+                    <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
+                  </FlexGrid>
+                </ReflexElement>
+                <ReflexSplitter />
+                <ReflexElement minSize={75}>
+                  <h2>総合評価点</h2>
+                  <FlexGrid itemsSource={bidResultDisplayData}>
+                    <FlexGridColumn header="企業の能力等" binding="companyAbility" />
+                    <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
+                  </FlexGrid>
+                </ReflexElement>
+              </ReflexContainer>
             </ReflexElement>
-
             <ReflexSplitter />
-
-            <ReflexElement minSize={75}>
-              <h2>総合評価点</h2>
-              <FlexGrid itemsSource={bidResultDisplayData} headersVisibility={wjcGrid.HeadersVisibility.All}>
-                <FlexGridColumn header="企業の能力等" binding="companyAbility" isRequired={false} />
-                <FlexGridColumn header="技術者の能力等" binding="engineerAbility" isRequired={false} />
-              </FlexGrid>
+            <ReflexElement>
+              <div>
+                <label>右</label>
+              </div>
             </ReflexElement>
-
           </ReflexContainer>
-        </ReflexElement>
+        </div>
+      </Tab>
 
-        <ReflexSplitter />
-
-        <ReflexElement>
-          <div>
-            <label>右</label>
-          </div>
-        </ReflexElement>
-
-      </ReflexContainer>
-    </div>
+    </TabPanel>
   );
 }
 
