@@ -25,17 +25,19 @@ html, body, #root {
   width: 100%;
 }
 
+.app{
+  height: 100%;
+  width: 100%;
+}
 
-
+/* ブロックとして表示はしているけどvisibilityでhiddenにしている */
 .wj-tabpane {
-  display: block !important; /* 必須 */
+  display: block !important;
   height: 0;
-  overflow: hidden;
   visibility: hidden;
 }
 
 .wj-tabpane.wj-state-active {
   height: 100%;
   visibility: visible;
-  overflow: visible;
 }

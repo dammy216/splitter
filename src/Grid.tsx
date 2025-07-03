@@ -12,35 +12,41 @@ const Grid = () => {
     { companyId: 6, companyName: "Company F", companyAbility: 80, engineerAbility: 85 },
   ];
   return (
-    <div className="App">
-      <ReflexContainer orientation="vertical">
-        <ReflexElement>
-          <ReflexContainer orientation="horizontal">
-            <ReflexElement minSize={75}>
-              <h2>入札結果</h2>
-              <FlexGrid itemsSource={bidResultDisplayData}>
-                <FlexGridColumn header="企業の能力等" binding="companyAbility" />
-                <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
-              </FlexGrid>
-            </ReflexElement>
-            <ReflexSplitter />
-            <ReflexElement minSize={75}>
-              <h2>総合評価点</h2>
-              <FlexGrid itemsSource={bidResultDisplayData}>
-                <FlexGridColumn header="企業の能力等" binding="companyAbility" />
-                <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
-              </FlexGrid>
-            </ReflexElement>
-          </ReflexContainer>
-        </ReflexElement>
-        <ReflexSplitter />
-        <ReflexElement>
-          <div>
-            <label>右</label>
-          </div>
-        </ReflexElement>
-      </ReflexContainer>
-    </div>
+    <>
+      <div className="grid">
+        <ReflexContainer orientation="vertical">
+          <ReflexElement>
+            <ReflexContainer orientation="horizontal">
+              <ReflexElement minSize={75}>
+                <div>
+                  <h2>入札結果</h2>
+                  <FlexGrid itemsSource={bidResultDisplayData}>
+                    <FlexGridColumn header="企業の能力等" binding="companyAbility" />
+                    <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
+                  </FlexGrid>
+                </div>
+              </ReflexElement>
+              <ReflexSplitter />
+              <ReflexElement minSize={75}>
+                <div>
+                  <h2>総合評価点</h2>
+                  <FlexGrid itemsSource={bidResultDisplayData}>
+                    <FlexGridColumn header="企業の能力等" binding="companyAbility" />
+                    <FlexGridColumn header="技術者の能力等" binding="engineerAbility" />
+                  </FlexGrid>
+                </div>
+              </ReflexElement>
+            </ReflexContainer>
+          </ReflexElement>
+          <ReflexSplitter />
+          <ReflexElement>
+            <div>
+              <label>右</label>
+            </div>
+          </ReflexElement>
+        </ReflexContainer>
+      </div>
+    </>
   );
 };
 
