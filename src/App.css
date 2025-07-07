@@ -1,16 +1,14 @@
 html, body, #root {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-.grid-tab{
+.app{
   height: 100%;
   width: 100%;
 }
 
-.wj-tabpanel {
+ .wj-tabpanel {
   height: 100%;
   width: 100%;
 }
@@ -25,19 +23,7 @@ html, body, #root {
   width: 100%;
 }
 
-.app{
+.wj-tabpane {
   height: 100%;
   width: 100%;
-}
-
-/* ブロックとして表示はしているけどvisibilityでhiddenにしている */
-.wj-tabpane {
-  display: block !important;
-  height: 0;
-  visibility: hidden;
-}
-
-.wj-tabpane.wj-state-active {
-  height: 100%;
-  visibility: visible;
 }

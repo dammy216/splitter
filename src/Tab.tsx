@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Tabtest = () => {
   return (
-    <div>Tab</div>
-  )
-}
+    <>
+      <a>タブテスト</a>
+      <div>Tabaaaa</div>
+    </>
+  );
+};
 
-export default Tabtest
+export default Tabtest;
